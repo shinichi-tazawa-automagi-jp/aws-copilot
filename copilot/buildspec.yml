@@ -58,6 +58,7 @@ phases:
             aws s3 cp "$ADDONSFILE" "s3://stackset-copilot-test-in-pipelinebuiltartifactbuc-ccdu4lo187qz/manual/$timestamp/$workload.addons.stack.yml";
             aws s3 cp "$ADDONSFILE" "s3://stackset-copilot-test-in-pipelinebuiltartifactbuc-prosukvv665s/manual/$timestamp/$workload.addons.stack.yml";
             jq --arg a "https://stackset-copilot-test-in-pipelinebuiltartifactbuc-prosukvv665s.s3.us-east-1.amazonaws.com/manual/$timestamp/$workload.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$workload-test.params.json > "$tmp" && mv "$tmp" ./infrastructure/$workload-test.params.json
+            jq --arg a "https://stackset-copilot-test-in-pipelinebuiltartifactbuc-prosukvv665s.s3.us-east-1.amazonaws.com/manual/$timestamp/$workload.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$workload-develop.params.json > "$tmp" && mv "$tmp" ./infrastructure/$workload-develop.params.json
           fi
         done;
       # Build images
