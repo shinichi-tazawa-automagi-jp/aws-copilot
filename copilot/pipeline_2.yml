@@ -15,22 +15,22 @@ source:
   provider: GitHub
   # Additional properties that further specify the location of the artifacts.
   properties:
-    branch: develop
+    branch: master
     repository: https://github.com/git@github.com-shinichi-tazawa-automagi-jp:shinichi-tazawa-automagi-jp/aws-copilot
     # Optional: specify the name of an existing CodeStar Connections connection.
     # connection_name: a-connection
 
 # This section defines the order of the environments your pipeline will deploy to.
 stages:
-  - name: test
+  - name: master
     # Optional: flag for manual approval action before deployment.
     # requires_approval: true
     # Optional: use test commands to validate this stage of your build.
   #       test_commands: [echo 'running tests', make test]
 
-  - name: develop
-      # Optional: flag for manual approval action before deployment.
-    requires_approval: true
-    # Optional: use test commands to validate this stage of your build.
-    # test_commands: [echo 'running tests', make test]
+#  - name: develop
+#      # Optional: flag for manual approval action before deployment.
+#    requires_approval: true
+#    # Optional: use test commands to validate this stage of your build.
+#    # test_commands: [echo 'running tests', make test]
 
